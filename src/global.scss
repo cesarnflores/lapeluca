@@ -24,3 +24,24 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+.toast-ok{
+  --background : #1b5e20;
+  --color: #fafafa;
+  --width: 90%;
+}
+
+.toast-error{
+  --background : #e65100;
+  --color: #fafafa;
+  --width: 90%;
+}
+
+.flotadoDerecha{
+  float: right;
+}
+
+.flotadoIzquierda{
+    float: left;
+}

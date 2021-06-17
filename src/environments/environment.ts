@@ -3,7 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  envName: 'local',
+
+  //Config base.
+  serverUrl: 'https://cors-anywhere.herokuapp.com/https://app-gestionturnospeluqueria.herokuapp.com/peluquero',
+  
+  //Enpoints
+  servicioEndpoint: '/servicios',
+  //entregasEndpoint: '/entregas',
+  //cotizacionEndpoint: '/cotizacion',
+  //tipoDeCambioEndpoint: '/tipoCambio',
+  //configuraciones: '/configuraciones',
+  //registro: '/registro_precotizacion',
+  //seguimiento: '/seguimiento',
+  //envioMail: '/email'
 };
 
 /*

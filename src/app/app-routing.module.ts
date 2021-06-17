@@ -15,6 +15,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'otrapage',
+    loadChildren: () => import('./otrapage/otrapage.module').then( m => m.OtrapagePageModule)
+  },
 ];
 
 @NgModule({

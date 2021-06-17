@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Servicios de la Peluqueria "Don Donati"</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-item>
+      <ion-label>
+        Lista de servicios
+      </ion-label>
+    </ion-item>
+  </ion-row>
+  <ion-row>
+    <ion-col sizeLg="4" sizeMd="4" *ngFor="let servicio of listadoServicio">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>Servicio {{servicio.idServicio}}</ion-card-subtitle>
+          <!--  <ion-card-title style="font-size: x-large;">
+            <ion-input placeholder="Servicios">
+            </ion-input>
+          </ion-card-title> -->
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input [(ngModel)]="servicio.nombre" readonly=true></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Precio</ion-label>
+                <ion-input [(ngModel)]="servicio.precio" readonly=false></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-button style="margin: 40px; " (click)="showDialogo(element)">
+    Mostrar Dialog</ion-button>
+
+  <ion-button style="margin: 40px; " (click)="mostrarToastOk('Todo esta bien!!')">
+    Mostrar Toast OK</ion-button>
+
+  <ion-button style="margin: 40px; " (click)="mostrarToastError('Hubo algun error, hace las cosas bien..')">
+    Mostrar Toast Error</ion-button>
+
+
+  <ion-button style="margin: 40px; " [routerLink]="['/home']" routerDirection="forward">
+    Volver</ion-button>
+
+
+</ion-content>

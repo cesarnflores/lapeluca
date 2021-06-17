@@ -22,4 +22,15 @@
   <ion-list>
     <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
   </ion-list>
+
+
+  <ion-button style="margin-top: 40px; "  
+      
+      [routerLink]="['/otrapage']" 
+      routerDirection="forward" 
+      (click) = "inicializarAlgo()" 
+      >Hacia otra pagina</ion-button>
+
+
+
 </ion-content>
