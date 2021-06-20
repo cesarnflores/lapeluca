@@ -10,7 +10,7 @@
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
@@ -18,19 +18,19 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-list>
     <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
   </ion-list>
 
 
-  <ion-button style="margin-top: 40px; "  
-      
-      [routerLink]="['/otrapage']" 
-      routerDirection="forward" 
-      (click) = "inicializarAlgo()" 
-      >Hacia otra pagina</ion-button>
+  <ion-button style="margin-top: 40px; " [routerLink]="['/otrapage']" routerDirection="forward"
+    (click)="inicializarAlgo()">Hacia otra pagina</ion-button>
 
+  <ion-button style="margin-top: 40px; " 
+    (click)="goToPageRouter()">Hacia otra pagina con navigation</ion-button>
+
+  
 
 
 </ion-content>

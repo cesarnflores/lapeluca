@@ -5,6 +5,8 @@ import { AnimationController, LoadingController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-otrapage',
@@ -16,13 +18,16 @@ export class OtrapagePage extends CommonsService implements OnInit {
 
   operacionEnPantalla: string = 'ALGO por aqui';
   listadoServicio: any;
-
+  vendedorNombre: string = '';
+  objetito: any = {};
 
   constructor(
     public loadingController: LoadingController,
     public toastController: ToastController,    
     public servicioService: ServicioService,
     public alertController: AlertController,
+    private route: ActivatedRoute, 
+    private router: Router
     
   ) {
     super(toastController, loadingController);
@@ -31,7 +36,21 @@ export class OtrapagePage extends CommonsService implements OnInit {
     listadoDoc.then(data => {
       this.listadoServicio = data.body;
       console.log(this.listadoServicio);
-    });  
+    }); 
+    
+    
+    try {
+      this.route.queryParams.subscribe(() => {
+        if (this.router.getCurrentNavigation().extras.state) {
+          this.vendedorNombre = this.router.getCurrentNavigation().extras.state.vendedorNombre;
+          this.objetito = this.router.getCurrentNavigation().extras.state.algunObjeto;
+        }
+      });
+    } catch (error) {
+      console.log("ERROR --> " + error);
+    }
+
+
 
   }
 

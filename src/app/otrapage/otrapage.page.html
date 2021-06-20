@@ -45,6 +45,22 @@
       </ion-card>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <label>Datos pasados: </label>
+    <ion-col>
+      <ion-item>
+        <ion-label position="floating">nombreVendedor</ion-label>
+        <ion-input [(ngModel)]="vendedorNombre" readonly=true></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">objetito</ion-label>
+        <ion-input [(ngModel)]="objetito.nombre" readonly=true></ion-input>
+        <ion-input [(ngModel)]="objetito.apellido" readonly=true></ion-input>
+      </ion-item>
+
+    </ion-col>
+
+  </ion-row>
 
   <ion-button style="margin: 40px; " (click)="showDialogo(element)">
     Mostrar Dialog</ion-button>

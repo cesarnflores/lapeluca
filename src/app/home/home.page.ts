@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService, Message } from '../services/data.service';
+import { NavigationExtras, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,7 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private router: Router,) { }
 
   refresh(ev) {
     setTimeout(() => {
@@ -19,8 +21,29 @@ export class HomePage {
     return this.data.getMessages();
   }
 
-  inicializarAlgo(){
+  inicializarAlgo() {
     console.log('GATOoo');
   }
+
+  goToPageRouter() {
+
+    let navigationExtras: NavigationExtras;
+    let objetito = {
+      nombre: 'Cesar',
+      apellido: 'Flores'
+    }
+
+    navigationExtras = {
+      state: {
+        vendedorNombre: 'pablito',
+        algunObjeto: objetito,
+      }
+
+    };
+
+    this.router.navigate(['otrapage'], navigationExtras);
+
+  }
+
 
 }
